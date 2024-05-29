@@ -1,3 +1,9 @@
+//  Team Members
+//  Member 1: [Atah-Habibi], [ID:130699943]
+//  Member 2: [Matthew-Press], [ID:129894281]
+
+
+
 #include "threads.h"
 
 // Semaphore to control access to the shared file
@@ -14,7 +20,9 @@ void* thread_function(void* arg) {
         "Computer science is no more about computers than astronomy is about telescopes. --Edsger Dijkstra\n";
 
     // Each thread runs this loop 8 times
-    for (int i = 0; i < 8; i++) {
+    int i; 
+
+    for (i = 0; i < 8; i++) {
         // Sleep based on whether the thread ID is even or odd
         if (thread_id % 2 == 0) {
             sleep(2);  // Even threads sleep for 2 seconds
@@ -70,12 +78,14 @@ int main() {
     int thread_ids[NUM_THREADS];
     
     // Create the threads
-    for (int i = 0; i < NUM_THREADS; i++) {
-        thread_ids[i] = i + 1;  // Thread IDs are 1-based
+    int it;
+
+    for (it = 0; it < NUM_THREADS; it++) {
+        thread_ids[it] = it + 1;  // Thread IDs are 1-based
         // Print a message indicating thread creation
-        printf("Creating thread, in main(): %d\n", thread_ids[i]);
+        printf("Creating thread, in main(): %d\n", thread_ids[it]);
         // Create the thread and check for errors
-        if (pthread_create(&threads[i], NULL, thread_function, &thread_ids[i]) != 0) {
+        if (pthread_create(&threads[it], NULL, thread_function, &thread_ids[it]) != 0) {
             // Print an error message and exit if the thread cannot be created
             perror("Error creating thread");
             exit(EXIT_FAILURE);
@@ -83,8 +93,11 @@ int main() {
     }
 
     // Wait for all threads to complete
-    for (int i = 0; i < NUM_THREADS; i++) {
-        pthread_join(threads[i], NULL);
+
+    int x; 
+
+    for (x = 0; x < NUM_THREADS; x++) {
+        pthread_join(threads[x], NULL);
     }
 
     // Destroy the semaphore

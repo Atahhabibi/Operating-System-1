@@ -1,3 +1,7 @@
+//  Team Members
+//  Member 1: [Atah-Habibi], [ID:130699943]
+//  Member 2: [Matthew-Press], [ID:129894281]
+
 #ifndef THREADS_H
 #define THREADS_H
 

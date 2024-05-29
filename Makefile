@@ -1,3 +1,8 @@
+# Team Members
+# Member 1: [Atah-Habibi], [ID:130699943]
+# Member 2: [Matthew-Press], [ID:129894281]
+
+
 CC = gcc
 CFLAGS = -Wall -pthread
 TARGET = bots
@@ -12,3 +17,4 @@ main.o: main.c threads.h
 
 clean:
 	rm -f $(TARGET) *.o QUOTE.txt
+
